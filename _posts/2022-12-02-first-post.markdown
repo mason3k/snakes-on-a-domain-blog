@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Write a Post"
 date: 2022-12-02
 categories: jekyll blogging
