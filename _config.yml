@@ -27,11 +27,13 @@ url: "https://mason3k.github.io" # the base hostname & protocol for your site, e
 # twitter_username: jekyllrb
 github_username:  mason3k
 
+show_excerpts: true
+
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
-show_excerpts: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
