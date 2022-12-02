@@ -3,16 +3,9 @@ layout: page
 title: About
 permalink: /about/
 ---
+## Welcome!
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm a full-time Python developer with an English Literature degree. You do the math. No actually, please do the math for me. 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I'm constantly learning (and forgetting!) new things, so I created this blog to document tips, tools, programming jokes, and other 
+things that make my day-to-day programming life more joyful. 
