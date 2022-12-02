@@ -22,9 +22,9 @@ title: Snakes on a Domain
 email: sydney.u.jones@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Short posts about coding adventures in Python.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+baseurl: "/snakes-on-a-domain" # the subpath of your site, e.g. /blog
+url: "https://mason3k.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
 github_username:  mason3k
 
 # Build settings
