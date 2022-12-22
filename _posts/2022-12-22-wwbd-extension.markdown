@@ -9,6 +9,8 @@ categories: vscode venvs extensions
 
 If you're like me, you know that even for small Python projects and scripts, you should be using a virtual environment. There are a gazillion reasons for this, most of which have been covered effectively elsewhere. 
 
+<!-- excerpt-end -->
+
 This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* actual work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
 
 ![st-agustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}

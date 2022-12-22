@@ -28,6 +28,7 @@ url: "https://mason3k.github.io" # the base hostname & protocol for your site, e
 github_username:  mason3k
 
 show_excerpts: true
+excerpt_separator: <!-- excerpt-end -->
 
 # Build settings
 # theme: minima
