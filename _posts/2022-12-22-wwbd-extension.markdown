@@ -20,13 +20,13 @@ This post is aimed at those of you who *know* you should be using venvs for your
 
 ### WWBD to the Rescue
 
-Lately, I've been living up to my venv ideals almost entirely due to a little [experiemntal VS Code extension called WWBD](https://visualstudiomagazine.com/articles/2022/06/10/wwbd.aspx) - What Would Brett Do? 
+Lately, I've been living up to my venv ideals almost entirely due to a little [experimental VS Code extension called WWBD](https://visualstudiomagazine.com/articles/2022/06/10/wwbd.aspx) - What Would Brett Do? 
 
 Jesus, in this formulation, has been replaced by Python Jesus/Python core developer [Brett Cannon](https://fosstodon.org/@brettcannon
 ), who has spent quite a bit of time thinking about Python packaging, environment strategy, and developer best practices. He's now allowing us live a day (ok, fine, maybe just a second) in the life via this extension, which essentially automates venv creation, activation, and VS Code integration according to his virtual environment philosophy.
 
 ![ridealong]({{ "/assets/ridealong.webp" | relative_url }}){: .align-center}
-*Kind of like a Python ridealong*
+*Kind of like a Python ride-along*
 {: .text-center}
 
 ### The Caveats
@@ -49,12 +49,12 @@ For more details on what's going on behind the scenes and why, you can refer to 
 
 ### Hidden Gem
 
-This is already pretty cool. But as an added bonus, if you already have a `requirements.txt` file in your workspace, those dependencies will autommatically be installed into your new venv. 
+This is already pretty cool. But as an added bonus, if you already have a `requirements.txt` file in your workspace, those dependencies will automatically be installed into your new venv. 
 
 That means if you have been working on a project using your global Python interpreter before you saw the error of your ways, you can pipe `pip freeze` to a `requirements.txt` file and be all set to go in your new, enlightened life.
 
 ### Bonus
 
-If you become rigid and dogmatic in your approach to venvs, as all good converts do, you can set the `PIP_REQUIRE_VIRTUALENV` environment variable to true; try to `pip install` after doing so will fail if a virtual environment is not activated. 
+If you become rigid and dogmatic in your approach to venvs, as all good converts do, you can set the `PIP_REQUIRE_VIRTUALENV` environment variable to true; try to `pip install` after doing so will fail if a virtual environment is not activated.
 
 No self-flagellation required.
