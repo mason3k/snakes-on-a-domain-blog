@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Make Doing the Right Thing Easy with WWBD"
+title:  "Make it Easy to Do the Right Thing with WWBD"
 date:   2022-12-22
 categories: vscode venvs extensions
 ---
