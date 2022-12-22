@@ -19,6 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Snakes on a Domain
+subtitle: Short adventures in Python
 email: sydney.u.jones@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Short posts about coding adventures in Python.
@@ -27,8 +28,10 @@ url: "https://mason3k.github.io" # the base hostname & protocol for your site, e
 # twitter_username: jekyllrb
 github_username:  mason3k
 
+#
 show_excerpts: true
 excerpt_separator: <!-- excerpt-end -->
+
 
 # Build settings
 # theme: minima
@@ -64,6 +67,8 @@ tag_archive:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# Minimal Mistakes Theme settings
+
 defaults:
   # _posts
   - scope:
@@ -76,3 +81,17 @@ defaults:
       comments: true
       share: true
       related: true
+
+minimal_mistakes_skin: dark #air
+search: true
+# author:
+#   name     : "Sydney Jones"
+#   avatar   : "/assets/me.jpg"
+#   bio      : "Full-time Python developer with a crossword puzzle addiction"
+#   location : "Madison, WI, USA"
+#   links:
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       url: "https://github.com/mason3k"
+
+logo: "assets/snake.png" # Icon by Freepik
