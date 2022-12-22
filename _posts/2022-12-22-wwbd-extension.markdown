@@ -11,7 +11,7 @@ If you're like me, you know that even for small Python projects and scripts, you
 
 <!-- excerpt-end -->
 
-This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* actual work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
+This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* real work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
 
 ![st-agustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}
 *Lord, make me a good venv user, but not yet*
@@ -57,4 +57,4 @@ That means if you have been working on a project using your global Python interp
 
 If you become rigid and dogmatic in your approach to venvs, as all good converts do, you can set the `PIP_REQUIRE_VIRTUALENV` environment variable to true; try to `pip install` after doing so will fail if a virtual environment is not activated. 
 
-Self-flagellation optional.
+No self-flagellation required.
