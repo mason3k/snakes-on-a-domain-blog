@@ -82,7 +82,7 @@ defaults:
       share: true
       related: true
 
-minimal_mistakes_skin: dark #air
+minimal_mistakes_skin: "dark"
 search: true
 # author:
 #   name     : "Sydney Jones"
