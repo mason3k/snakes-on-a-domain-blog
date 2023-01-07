@@ -1,5 +1,4 @@
 ---
-layout: single
 title:  "Make it Easy to Do the Right Thing with WWBD"
 date:   2022-12-22
 categories: vscode venvs extensions
@@ -7,20 +6,19 @@ categories: vscode venvs extensions
 
 ### The Problem
 
-If you're like me, you know that even for small Python projects and scripts, you should be using a virtual environment. There are a gazillion reasons for this, most of which have been covered effectively elsewhere. 
+If you're like me, you know that even for small Python projects and scripts, you should be using a virtual environment. There are a gazillion reasons for this, most of which have been covered effectively elsewhere.
 
 <!-- excerpt-end -->
 
 This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* real work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
 
-![st-agustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}
+![st-augustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}
 *Lord, make me a good venv user, but not yet*
 {: .text-center}
 
-
 ### WWBD to the Rescue
 
-Lately, I've been living up to my venv ideals almost entirely due to a little [experimental VS Code extension called WWBD](https://visualstudiomagazine.com/articles/2022/06/10/wwbd.aspx) - What Would Brett Do? 
+Lately, I've been living up to my venv ideals almost entirely due to a little [experimental VS Code extension called WWBD](https://visualstudiomagazine.com/articles/2022/06/10/wwbd.aspx) - What Would Brett Do?
 
 Jesus, in this formulation, has been replaced by Python Jesus/Python core developer [Brett Cannon](https://fosstodon.org/@brettcannon
 ), who has spent quite a bit of time thinking about Python packaging, environment strategy, and developer best practices. He's now allowing us live a day (ok, fine, maybe just a second) in the life via this extension, which essentially automates venv creation, activation, and VS Code integration according to his virtual environment philosophy.
@@ -49,7 +47,7 @@ For more details on what's going on behind the scenes and why, you can refer to 
 
 ### Hidden Gem
 
-This is already pretty cool. But as an added bonus, if you already have a `requirements.txt` file in your workspace, those dependencies will automatically be installed into your new venv. 
+This is already pretty cool. But as an added bonus, if you already have a `requirements.txt` file in your workspace, those dependencies will automatically be installed into your new venv.
 
 That means if you have been working on a project using your global Python interpreter before you saw the error of your ways, you can pipe `pip freeze` to a `requirements.txt` file and be all set to go in your new, enlightened life.
 
