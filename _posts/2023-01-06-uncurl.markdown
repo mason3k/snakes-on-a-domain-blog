@@ -1,0 +1,108 @@
+---
+title:  "Effortless POST requests with uncurl"
+date:   2023-01-06
+categories: tools til requests
+---
+
+### TIL
+
+Today I learned about a handy little project called [`uncurl`](https://github.com/spulec/uncurl).
+<!-- excerpt-end -->
+
+ No, this is not a tool to take the [coolest sport out of the Olympics](https://olympics.com/en/video/edin-makes-a-curling-spin-o-rama-in-sweden-s-last-shot) or de-Hermione Anne Hathaway. It takes the text of a curl command and converts it to Python code using the [Requests library](https://requests.readthedocs.io/en/latest/).
+
+![anne-hathaway]({{ "/assets/anne_hatheway_pre.png" | relative_url }}){: .align-center}
+*Julie Andrews hates volume??*
+{: .text-center}
+
+So for instance, giving `uncurl` a curl command customizing the User Agent for a request to [getfedora.org](getfedora.org) will output the corresponding Python request, all ready to be pasted straight into your IDE. Throw a `import requests` at the top of your Python file and you have a fully functioning Python script.
+
+```shell
+> uncurl 'curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) 
+Gecko/20100101 Firefox/60.0" https://getfedora.org/'
+>
+> requests.get("https://getfedora.org/",
+    headers={
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 
+        Firefox/60.0"
+    },
+    cookies={},
+    auth=(),
+)
+```
+
+### Pairing with Developer Tools
+
+So this is a nice little tool. But pair it with the option in your browser's Developer Tools to copy a request as a curl command and the code practically writes itself (but in a ~fun~ way, not in [a possibly-illegal-Github-copilot-y](https://www.infoq.com/news/2022/11/lawsuit-github-copilot/#:~:text=A%20class%2Daction%20lawsuit%20has,the%20world%20of%20artificial%20intelligence.) way). Let's illustrate with an example.
+
+### Putting it Together
+
+In solidarity with the curly-haired women maligned by the 2000s makeover montage ✊, we'll head over to `functionofbeauty.com`'s hair profile builder and prepare to lock in some moisture.
+
+![joke_husky]({{ "/assets/joke_husky.jpeg" | relative_url }}){: .align-center}
+*If this post is a mini-class, would that make it METHODofbeauty.com?*
+{: .text-center}
+
+Let's say the information we want to parse only appears when we select curl type "3B" and click "Submit".
+![curl-type-submit.jpg]({{ "/assets/curl_type_submit.jpg" | relative_url }}){: .align-center}
+
+We'll open up DevTools and navigate to the Network tab to see what request is made so we can replicate it in our Python code.
+![curl-type.jpg]({{ "/assets/curl_type.jpg" | relative_url }}){: .align-center}
+
+And there it is! But it's not just a trivial little GET, but a POST. We actually have to send some form-encoded data, and we'll get the full HTML we need back, ready for parsing. We could write our request manually in Python, but why bother? We have conditioning to get back to. All we need to do is use this handy little option to copy the request we triggered as curl:
+
+![curl-type.jpg]({{ "/assets/copy_as_curl.jpg" | relative_url }}){: .align-center}
+
+Now we have our full curl command, locked and loaded in our clipboard!
+
+```python
+curl 'https://www.functionofbeauty.com/order/ajax/update_curl_options.php' \
+  -H 'authority: www.functionofbeauty.com' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -H 'dnt: 1' \
+  -H 'origin: https://www.functionofbeauty.com' \
+  -H 'referer: https://www.functionofbeauty.com/order/' \
+  -H 'sec-ch-ua: "Not?A_Brand";v="8", "Chromium";v="108"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0' \
+  -H 'x-requested-with: XMLHttpRequest' \
+  --data-raw 'curlTypeOptions%5B%5D=&hairType=curly&hairStructure=&moisture=&1=3&curl_type=3a' \
+  --compressed
+```
+
+We'll had over to the terminal, feed this whole command (in quotes) to `uncurl`, and watch the uncurl magic happen:
+
+![uncurl_terminal]({{ "/assets/uncurl_terminal.jpg" | relative_url }}){: .align-center}
+
+Pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), import `requests` at the top of your file, and you have a functioning little Python script!
+
+![code1]({{ "/assets/code1.jpg" | relative_url }}){: .align-center}
+
+### Bonus: pipx
+
+When you have tool like this, where you're mostly going to be using it on the command line, it's a great time to think about installing or running it with [pipx](https://pypa.github.io/pipx/). `pipx` is a tool that installs any package you want into an isolated venv and adds any entrypoints to your system PATH, so it's always available to you. As a result, A) you avoid 🔥 dependency hell 🔥 and B) know that no matter what venv you have activated, you'll still have your command-line tools at the ready.
+
+To do this:
+
+1. [Install pipx](https://pypa.github.io/pipx/installation/)
+    1. On mac `brew install pipx` and `pipx ensurepath`
+1. `pipx run uncurl ...` to just run uncurl one time, or if you want to keep it on your system to run any time, `pipx install uncurl`
+    1. After running `pipx install`, you can run `uncurl` like normal from anywhere!
+
+### Bonus: HTTPX
+
+One last quick win...for the most part, we can swap out the library `httpx` for `requests` with minimal compatibility issues (see [here](<https://www.python-httpx.org/compatibility/>) for a few exceptions). HTTPX has both sync and async APIs and a ton of helpful and Pythonic methods/attributes. For instance, notice how, here, I can easily get the content as a string and do some really intuitive error checking.
+
+![uncurl_terminal]({{ "/assets/httpx_code1.jpg" | relative_url }}){: .align-center}
+
+Plus, if you're using this functionality to screen scrape, sometimes the requests library is blocked but HTTPX, being less well-known, is not.
+
+I'd say that's pretty fabulous.
+
+![anne_smiley]({{ "/assets/anne_smiley.jpeg" | relative_url }}){: .align-center}
