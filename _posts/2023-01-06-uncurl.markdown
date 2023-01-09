@@ -9,7 +9,7 @@ categories: tools til requests
 Today I learned about a handy little project called [`uncurl`](https://github.com/spulec/uncurl).
 <!-- excerpt-end -->
 
- No, this is not a tool to take the [coolest sport out of the Olympics](https://olympics.com/en/video/edin-makes-a-curling-spin-o-rama-in-sweden-s-last-shot) or de-Hermione Anne Hathaway. It takes the text of a curl command and converts it to Python code using the [Requests library](https://requests.readthedocs.io/en/latest/).
+ No, this is not a tool to take the [coolest sport](https://olympics.com/en/video/edin-makes-a-curling-spin-o-rama-in-sweden-s-last-shot) out of the Olympics or de-Hermione Anne Hathaway. It takes the text of a curl command and converts it to Python code using the [Requests library](https://requests.readthedocs.io/en/latest/).
 
 ![anne-hathaway]({{ "/assets/anne_hatheway_pre.png" | relative_url }}){: .align-center}
 *Julie Andrews hates volume??*
