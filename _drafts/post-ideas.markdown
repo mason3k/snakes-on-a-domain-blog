@@ -20,7 +20,8 @@
 
 ## TIL
 
+- multiple local locations for pip install
+
 ## Tool of the day
 
-- curl converter
 - pipdeptree
