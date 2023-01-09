@@ -83,6 +83,7 @@ defaults:
       related: true
 
 minimal_mistakes_skin: "dark"
+words_per_minute: 150
 search: true
 # author:
 #   name     : "Sydney Jones"
