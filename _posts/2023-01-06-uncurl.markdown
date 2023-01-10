@@ -39,9 +39,10 @@ So this is a nice little tool. But pair it with the option in your browser's Dev
 
 In solidarity with the curly-haired women maligned by the 2000s makeover montage ✊, we'll head over to `functionofbeauty.com`'s hair profile builder and prepare to lock in some moisture.
 
-![joke_husky]({{ "/assets/joke_husky.jpeg" | relative_url }}){: .align-center}
+![joke_husky]({{ "/assets/joke_husky_small.jpeg" | relative_url }}){: .align-center }
 *If this post is a mini-class, would that make it METHODofbeauty.com?*
 {: .text-center}
+
 
 Let's say the information we want to parse only appears when we select curl type "3B" and click "Submit".
 ![curl-type-submit.jpg]({{ "/assets/curl_type_submit.jpg" | relative_url }}){: .align-center}
@@ -80,7 +81,7 @@ We'll had over to the terminal, feed this whole command (in quotes) to `uncurl`,
 
 ![uncurl_terminal]({{ "/assets/uncurl_terminal.jpg" | relative_url }}){: .align-center}
 
-Pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), import `requests` at the top of your file, and you have a functioning little Python script!
+Copy and paste this output to a file, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), throw `requests` to the the top of your file, and you have a functioning little Python script!
 
 ![code1]({{ "/assets/code1.jpg" | relative_url }}){: .align-center}
 
@@ -88,12 +89,11 @@ Pip install `requests` into your venv (you are using a [per-project venv]({{ sit
 
 When you have tool like this, where you're mostly going to be using it on the command line, it's a great time to think about installing or running it with [pipx](https://pypa.github.io/pipx/). `pipx` is a tool that installs any package you want into an isolated venv and adds any entrypoints to your system PATH, so it's always available to you. As a result, A) you avoid 🔥 dependency hell 🔥 and B) know that no matter what venv you have activated, you'll still have your command-line tools at the ready.
 
-To do this:
-
 1. [Install pipx](https://pypa.github.io/pipx/installation/)
     1. On mac `brew install pipx` and `pipx ensurepath`
 1. `pipx run uncurl ...` to just run uncurl one time, or if you want to keep it on your system to run any time, `pipx install uncurl`
     1. After running `pipx install`, you can run `uncurl` like normal from anywhere!
+{: .notice--info}
 
 ### Bonus: HTTPX
 
@@ -101,7 +101,7 @@ One last quick win...for the most part, we can swap out the library `httpx` for 
 
 ![uncurl_terminal]({{ "/assets/httpx_code1.jpg" | relative_url }}){: .align-center}
 
-Plus, if you're using this functionality to screen scrape, sometimes the requests library is blocked but HTTPX, being less well-known, is not.
+Plus, if you're using this functionality to screen scrape, some sites block requests generated through the Requests library, but HTTPX, being less well-known, can sneak through.
 
 I'd say that's pretty fabulous.
 
