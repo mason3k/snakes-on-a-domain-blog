@@ -83,7 +83,7 @@ We'll head over to the terminal, feed this whole command (in quotes) to `uncurl`
 
 Copy and paste this output to a file, drop an `import requests` at the the top, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), and you have a functioning little Python script!
 
-![code1]({{ "/assets/code1.jpg" | relative_url }}){: .align-center}
+![requests_example]({{ "/assets/requests_example.jpg" | relative_url }}){: .align-center}
 
 ### Bonus: pipx
 
@@ -99,7 +99,7 @@ When you have tool like this, where you're mostly going to be using it on the co
 
 One last quick win...for the most part, we can swap out the library `httpx` for `requests` with minimal compatibility issues (see [here](<https://www.python-httpx.org/compatibility/>) for a few exceptions). HTTPX has both sync and async APIs and a ton of helpful and Pythonic methods/attributes. For instance, notice how, here, I can easily get the content as a string and do some really intuitive error checking.
 
-![uncurl_terminal]({{ "/assets/httpx_code1.jpg" | relative_url }}){: .align-center}
+![httpx_example]({{ "/assets/httpx_example.jpg" | relative_url }}){: .align-center}
 
 Plus, if you're using this functionality to screen scrape, some sites block requests generated through the Requests library, but HTTPX, being less well-known, can sneak through.
 
