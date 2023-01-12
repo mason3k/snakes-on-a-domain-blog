@@ -85,14 +85,14 @@ defaults:
 minimal_mistakes_skin: "dark"
 words_per_minute: 150
 search: true
-# author:
-#   name     : "Sydney Jones"
-#   avatar   : "/assets/me.jpg"
-#   bio      : "Full-time Python developer with a crossword puzzle addiction"
-#   location : "Madison, WI, USA"
-#   links:
-#     - label: "GitHub"
-#       icon: "fab fa-fw fa-github"
-#       url: "https://github.com/mason3k"
+author:
+  name     : "Sydney Jones"
+  avatar   : "/assets/me.jpg"
+  bio      : "Full-time Python developer with a crossword puzzle addiction"
+  location : "Wisconsin, USA"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mason3k"
 
 logo: "assets/snake.png" # Icon by Freepik
