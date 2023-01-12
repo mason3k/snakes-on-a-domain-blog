@@ -1,7 +1,7 @@
 ---
 title:  "Get Rich (in your repl) Fast"
 date:   2023-01-10
-categories: repl rich tools [dev environment]
+categories: repl rich tools dev-environment
 ---
 
 ### The Problem
