@@ -1,7 +1,7 @@
 ---
 title:  "Effortless POST requests with uncurl"
 date:   2023-01-06
-categories: tools til requests
+categories: tools til scripting
 ---
 
 ### TIL
@@ -37,7 +37,7 @@ So this is a nice little tool. But pair it with the option in your browser's Dev
 
 ### Putting it Together
 
-In solidarity with the curly-haired women maligned by the 2000s makeover montage ✊, we'll head over to `functionofbeauty.com`'s hair profile builder and prepare to lock in some moisture.
+In solidarity with the curly-haired women maligned by the 2000s glow-up montage ✊, we'll head over to `functionofbeauty.com`'s hair profile builder and prepare to lock in some moisture.
 
 ![joke_husky]({{ "/assets/joke_husky_small.jpeg" | relative_url }}){: .align-center }
 *If this post is a mini-class, would that make it METHODofbeauty.com?*
@@ -77,17 +77,17 @@ curl 'https://www.functionofbeauty.com/order/ajax/update_curl_options.php' \
   --compressed
 ```
 
-We'll had over to the terminal, feed this whole command (in quotes) to `uncurl`, and watch the uncurl magic happen:
+We'll head over to the terminal, feed this whole command (in quotes) to `uncurl`, and watch the uncurl magic happen:
 
 ![uncurl_terminal]({{ "/assets/uncurl_terminal.jpg" | relative_url }}){: .align-center}
 
-Copy and paste this output to a file, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), throw `requests` to the the top of your file, and you have a functioning little Python script!
+Copy and paste this output to a file, drop an `import requests` at the the top, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), and you have a functioning little Python script!
 
 ![code1]({{ "/assets/code1.jpg" | relative_url }}){: .align-center}
 
 ### Bonus: pipx
 
-When you have tool like this, where you're mostly going to be using it on the command line, it's a great time to think about installing or running it with [pipx](https://pypa.github.io/pipx/). `pipx` is a tool that installs any package you want into an isolated venv and adds any entrypoints to your system PATH, so it's always available to you. As a result, A) you avoid 🔥 dependency hell 🔥 and B) know that no matter what venv you have activated, you'll still have your command-line tools at the ready.
+When you have tool like this, where you're mostly going to be using it on the command line, it's a great time to think about installing or running it with [pipx](https://pypa.github.io/pipx/). `pipx` is a tool that installs any package you want into an isolated venv and adds any entrypoints to your system PATH, so it's always available to you. As a result, you A) avoid 🔥 dependency hell 🔥 and B) know that no matter what venv you have activated, you'll still have your command-line tools at the ready.
 
 1. [Install pipx](https://pypa.github.io/pipx/installation/)
     1. On mac `brew install pipx` and `pipx ensurepath`
@@ -95,7 +95,7 @@ When you have tool like this, where you're mostly going to be using it on the co
     1. After running `pipx install`, you can run `uncurl` like normal from anywhere!
 {: .notice--info}
 
-### Bonus: HTTPX
+### Bonus Bonus: HTTPX
 
 One last quick win...for the most part, we can swap out the library `httpx` for `requests` with minimal compatibility issues (see [here](<https://www.python-httpx.org/compatibility/>) for a few exceptions). HTTPX has both sync and async APIs and a ton of helpful and Pythonic methods/attributes. For instance, notice how, here, I can easily get the content as a string and do some really intuitive error checking.
 

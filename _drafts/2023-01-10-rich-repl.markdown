@@ -1,7 +1,7 @@
 ---
-title:  "Make it Easy to Do the Right Thing with WWBD"
-date:   2022-12-22
-categories: vscode venvs extensions [dev environment]
+title:  "Get Rich (in your repl) Fast"
+date:   2023-01-10
+categories: repl rich tools [dev environment]
 ---
 
 ### The Problem
