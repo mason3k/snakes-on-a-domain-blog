@@ -47,6 +47,8 @@ year_archive:
   type: liquid
   path: /year-archive/
 
+teaser: /assets/markus-spiske-code.jpg
+
 # Site Footer
 footer:
   links:

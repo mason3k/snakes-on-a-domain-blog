@@ -2,6 +2,8 @@
 title:  "Make it Easy to Do the Right Thing with WWBD"
 date:   2022-12-22
 categories: vscode venvs extensions dev-environment
+header:
+  teaser: /assets/markus-spiske-code.jpg
 ---
 
 ### The Problem

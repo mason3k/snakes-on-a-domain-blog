@@ -2,6 +2,8 @@ main:
   - title: "About"
     url: /about/
   - title: "Posts"
-    url: /year-archive/
+    url: /posts/
   - title: "Topics"
     url: /categories/
+  - title: "Timeline"
+    url: /year-archive/
