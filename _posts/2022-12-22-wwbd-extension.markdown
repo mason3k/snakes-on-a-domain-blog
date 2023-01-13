@@ -53,7 +53,7 @@ This is already pretty cool. But as an added bonus, if you already have a `requi
 
 That means if you have been working on a project using your global Python interpreter before you saw the error of your ways, you can pipe `pip freeze` to a `requirements.txt` file and be all set to go in your new, enlightened life.
 
-### Bonus
+### Bonus: PIP_REQUIRE_VIRTUALENV
 
 If you become rigid and dogmatic in your approach to venvs, as all good converts do, you can set the `PIP_REQUIRE_VIRTUALENV` environment variable to true; try to `pip install` after doing so will fail if a virtual environment is not activated.
 
