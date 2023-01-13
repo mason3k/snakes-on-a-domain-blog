@@ -43,7 +43,6 @@ In solidarity with the curly-haired women maligned by the 2000s glow-up montage 
 *If this post is a mini-class, would that make it METHODofbeauty.com?*
 {: .text-center}
 
-
 Let's say the information we want to parse only appears when we select curl type "3B" and click "Submit".
 ![curl-type-submit.jpg]({{ "/assets/curl_type_submit.jpg" | relative_url }}){: .align-center}
 
@@ -83,7 +82,35 @@ We'll head over to the terminal, feed this whole command (in quotes) to `uncurl`
 
 Copy and paste this output to a file, drop an `import requests` at the the top, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), and you have a functioning little Python script!
 
-![requests_example]({{ "/assets/requests_example.jpg" | relative_url }}){: .align-center}
+```python
+import requests
+
+response = requests.post(
+    "https://www.functionofbeauty.com/order/ajax/"
+    "update_curl_options.php",
+    data="curlTypeOptions%5B%5D=&hairType=curly&hair"
+    "Structure=&moisture=&1=3&curl_type=3a",
+    headers={
+        "accept": "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "authority": "www.functionofbeauty.com",
+        "content-type": "application/x-www-form-urlencoded; "
+        "charset=UTF-8",
+        "dnt": "1",
+        "origin": "https://www.functionofbeauty.com",
+        "referer": "https://www.functionofbeauty.com/order/",
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0",
+        "x-requested-with": "XMLHttpRequest",
+    },
+    cookies={},
+)
+
+print(response.content.decode(encoding="utf8"))
+```
 
 ### Bonus: pipx
 
@@ -99,7 +126,41 @@ When you have tool like this, where you're mostly going to be using it on the co
 
 One last quick win...for the most part, we can swap out the library `httpx` for `requests` with minimal compatibility issues (see [here](<https://www.python-httpx.org/compatibility/>) for a few exceptions). HTTPX has both sync and async APIs and a ton of helpful and Pythonic methods/attributes. For instance, notice how, here, I can easily get the content as a string and do some really intuitive error checking.
 
-![httpx_example]({{ "/assets/httpx_example.jpg" | relative_url }}){: .align-center}
+```python
+import httpx
+
+response = httpx.post(
+    "https://www.functionofbeauty.com/order/ajax/"
+    "update_curl_options.php",
+    data="curlTypeOptions%5B%5D=&hairType=curly"
+    "&hairStructure=&moisture=&1=3&curl_type=3a",
+    headers={
+        "accept": "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "authority": "www.functionofbeauty.com",
+        "content-type": "application/x-www-form-urlencoded; "
+        "charset=UTF-8",
+        "dnt": "1",
+        "origin": "https://www.functionofbeauty.com",
+        "referer": "https://www.functionofbeauty.com/order/",
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "Mozilla/5.0",
+        "x-requested-with": "XMLHttpRequest",
+    },
+    cookies={},
+)
+
+if response.is_success:
+    print(response.text)
+else:
+    print(
+        f"Received bad status code {response.status_code}"
+    )
+
+```
 
 Plus, if you're using this functionality to screen scrape, some sites block requests generated through the Requests library, but HTTPX, being less well-known, can sneak through.
 
