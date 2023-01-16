@@ -4,27 +4,69 @@ date:   2023-01-10
 categories: repl rich tools dev-environment
 ---
 
-### The Problem
+### Your REPL, Colorized
 
-If you're like me, you know that even for small Python projects and scripts, you should be using a virtual environment. There are a gazillion reasons for this, most of which have been covered effectively elsewhere.
+When I want to do a quick verification on syntax or try a snippet of code, my tool of choice is often my Python REPL [TODO: add a link]. But visually, the experience can be a little...sad.  
 
 <!-- excerpt-end -->
 
-This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* real work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
+While some developers take pride in using the least attractive, least GUI-fied interface possible, I actually like tech that reflects we've made it past Pong.
 
+[TODO: Pong image]
 ![st-augustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}
 *Lord, make me a good venv user, but not yet*
 {: .text-center}
 
-### WWBD to the Rescue
+On the other hand, I love the terminal. The versatility, speed, and kindd of just the fact that I always have it up makes it the tool of choice for a ton of little admin tasks, including, as I mentioned, playing around in Python.
+
+### Rich
+
+Enter: Rich! Brought to us by the prolific Will McGugan [TODO: link], now of Textualize fame [TODO: link], Rich is a great library for bringing colorful output, including tables, tracebacks, and full-paneled layouts, to the Terminal.
+
+But for our purposes, we're going to rely on just a handful of lines to go from this:
+
+[TODO: rich before]
+
+![before-rich]({{ "/assets/before_rich.jpg" | relative_url }}){: .align-center}
+*Lord, make me a good venv user, but not yet*
+{: .text-center}
+
+To this:
+
+[TODO: rich after]
+
+![after-rich]({{ "/assets/richafter.jpg" | relative_url }}){: .align-center}
+*Lord, make me a good venv user, but not yet*
+{: .text-center}
+
+### The Setup
+
+So now you're feeling like Dorothy pre technicolor house-manslaughter. So let's get into how to set this up.
+
+#### Install Rich
+
+To get this to work, you have to make `rich` available to the Python interpreter you use in the terminal. I personally have a script to activate a venv every time I start up my shell. There are reasons you want to keep your global Python clean [TODO: link to the bonus content of requiring a virtual environment before pip installing]
+
+#### Install Pretty
+
+As documented in the Rich docs [TODO: link] (which are fantastic, by the way), to get color printing in your repl, you just need to run these lines:
+
+```python
+```
+
+![rich]({{ "/assets/after1.jpg" | relative_url }}){: .align-center}
+*Lord, make me a good venv user, but not yet*
+{: .text-center}
+
+#### Make it Permanent
 
 Lately, I've been living up to my venv ideals almost entirely due to a little [experimental VS Code extension called WWBD](https://visualstudiomagazine.com/articles/2022/06/10/wwbd.aspx) - What Would Brett Do?
 
 Jesus, in this formulation, has been replaced by Python Jesus/Python core developer [Brett Cannon](https://fosstodon.org/@brettcannon
 ), who has spent quite a bit of time thinking about Python packaging, environment strategy, and developer best practices. He's now allowing us live a day (ok, fine, maybe just a second) in the life via this extension, which essentially automates venv creation, activation, and VS Code integration according to his virtual environment philosophy.
 
-![ridealong]({{ "/assets/ridealong.webp" | relative_url }}){: .align-center}
-*Kind of like a Python ride-along*
+![python-rc]({{ "/assets/.pythonrc.jpg" | relative_url }}){: .align-center}
+*Lord, make me a good venv user, but not yet*
 {: .text-center}
 
 ### The Caveats
@@ -53,6 +95,4 @@ That means if you have been working on a project using your global Python interp
 
 ### Bonus
 
-If you become rigid and dogmatic in your approach to venvs, as all good converts do, you can set the `PIP_REQUIRE_VIRTUALENV` environment variable to true; try to `pip install` after doing so will fail if a virtual environment is not activated.
-
-No self-flagellation required.
+`from rich import print`
