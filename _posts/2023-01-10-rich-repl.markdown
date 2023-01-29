@@ -1,0 +1,110 @@
+---
+title:  "Get Rich (in your repl) Fast"
+date:   2023-01-10
+categories: repl rich tools dev-environment
+---
+
+### Your REPL, Colorized
+
+When I want to do a quick verification on syntax or try a snippet of code, my tool of choice is often my [Python REPL](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode). But visually, the experience can be a little...sad.  
+
+<!-- excerpt-end -->
+
+While some developers take pride in using the least attractive, least GUI-fied interface possible, I actually like tech that reflects we've made it past Pong.
+
+![pong]({{ "/assets/pong.webp" | relative_url }}){: .align-center}
+
+On the other hand, I love the terminal. The versatility, speed, and kindd of just the fact it's always around makes it the tool of choice for a ton of little admin tasks, including, as I mentioned, playing around in Python.
+
+### Rich
+
+Enter: Rich! Brought to us by the prolific [Will McGugan](https://www.willmcgugan.com/), now of [Textualize](https://www.textualize.io/) fame, Rich is a great library for bringing colorful output, including tables, tracebacks, and full-paneled layouts, to the Terminal.
+
+But for our purposes, we're going to rely on just a handful of lines to go from this:
+
+![before-rich]({{ "/assets/before_rich.jpg" | relative_url }}){: .align-center}
+{: .text-center}
+
+To this:
+
+![after-rich]({{ "/assets/richafter.jpg" | relative_url }}){: .align-center}
+{: .text-center}
+
+### The Setup
+
+So now you're feeling like Dorothy pre technicolor-house-manslaughter. So let's get into how to set this up.
+
+![dorothy]({{ "/assets/dorothy.gif" | relative_url }}){: .align-center}
+*I don't think we're in MS-DOS anymore, Toto*
+{: .text-center}
+
+#### Install Rich
+
+To get this to work, you have to make `rich` available to the Python interpreter you use in the terminal. I personally have a script to activate a venv every time I start up my shell so I keep my global Python  [squeaky clean]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}). This venv includes a few key packages I use all the time, including pipx and, more importantly for our purposes, Rich.
+
+#### Install Pretty
+
+As documented in the [Rich docs](https://rich.readthedocs.io/en/stable/introduction.html) (which are fantastic, by the way), to get color printing in your repl, you just need to run these lines:
+
+```shell
+>>> from rich import pretty
+>>> pretty.install()
+```
+
+Trying out some built-in types:
+
+![rich]({{ "/assets/builtins-ex.jpg" | relative_url }}){: .align-center}
+
+#### Make it Permanent
+
+But we are developers. We are, per our sacred text XKCD, automators to a fault.
+
+![rich]({{ "https://imgs.xkcd.com/comics/automation.png" }}){: .align-center}
+*Sob*
+{: .text-center}
+
+So let's make this change apply every time we start up our terminal. This is where a relatively obscure environment variables comes into play: [PYTHONSTARTUP](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONSTARTUP). You can set this to a filepath, and every time your Python REPL fires up, it'll run the lines of code specified in this file.
+
+Perfect! So we'll create a file, call it .pythonrc:
+
+```shell
+touch ~/.pythonrc
+```
+
+And in throw the command to install pretty in the file.
+
+```python
+import contextlib
+
+with contextlib.suppress(ImportError):
+ from rich import pretty
+ pretty.install()
+```
+
+**What's the contextlib stuff?**
+The context manager `suppress` is the same as a `try`/`Except`/`pass` pattern, catching and suppressing the exception type that we pass it. In this case, I don't want a huge traceback if I start my repl and Rich isn't available--which would otherwise cause an `ImportError`.
+{: .notice--info}
+
+As a last step, we'll save the path to our startup file in the `PYTHONSTARTUP` environment variable
+
+```shell
+export PYTHONSTARTUP=~/.pythonrc
+```
+
+Restart your shell, enter the Python repl, and taste the rainbow.
+
+![pythonrc]({{ "/assets/post-boilerplate.jpg" | relative_url }}){: .align-center}
+
+### Bonus
+
+If you get hooked on life in full color, you can easily incorporate Rich into any project with a single line at the top of your file (assuming you have Rich installed into the project-specific virtual environment).
+
+```python
+from rich import print
+```
+
+This will cause any normal `print` statements in your code to be rendered with the same beauty that you're now accustomed to in the REPL.
+
+![pythonrc]({{ "/assets/horse-oz.gif" | relative_url }}){: .align-center}
+
+And you're off! Happy coloring.
