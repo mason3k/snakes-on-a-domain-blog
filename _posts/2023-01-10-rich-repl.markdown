@@ -84,7 +84,7 @@ with contextlib.suppress(ImportError):
 ```
 
 **What's the contextlib stuff?**
-The context manager `suppress` is the same as a `try`/`Except`/`pass` pattern, catching and suppressing the exception type that we pass it. In this case, I don't want a huge traceback if I start my repl and Rich isn't available--which would otherwise cause an `ImportError`.
+The context manager `suppress` is the same as a `try`/`Except`/`pass` pattern, catching and suppressing the exception type that we pass it. In this case, I don't want a huge traceback if I start my REPL and Rich isn't installed in the current Python environment. With this error handling, if Rich is available we'll use it, and if it isn't, continue on as normal.
 {: .notice--info}
 
 As a last step, we'll save the path to our startup file in the `PYTHONSTARTUP` environment variable
@@ -93,7 +93,7 @@ As a last step, we'll save the path to our startup file in the `PYTHONSTARTUP` e
 export PYTHONSTARTUP=~/.pythonrc
 ```
 
-Restart your shell, enter the Python repl, and taste the rainbow.
+Restart your shell, enter the Python REPL, and taste the rainbow.
 
 ![pythonrc]({{ "/assets/post-boilerplate.jpg" | relative_url }}){: .align-center}
 
