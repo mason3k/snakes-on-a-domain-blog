@@ -51,6 +51,11 @@ teaser: /assets/markus-spiske-code.jpg
 
 google_site_verification: "8yy0DhISo5F9iSjV31QRrQcdxIuIpdiKdhe2hcYqm6o"
 
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "https-mason3k-github-io-snakes-on-a-domain-blog"
+
 # Site Footer
 footer:
   links:
