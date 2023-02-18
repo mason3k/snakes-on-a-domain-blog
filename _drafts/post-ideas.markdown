@@ -1,6 +1,8 @@
 
 # Post Ideas
 
+- Validation flow in Pydantic
+- precommit
 - Pydantic
 - Docker
 - Good PRs
@@ -25,3 +27,4 @@
 ## Tool of the day
 
 - pipdeptree
+- blackendocs
