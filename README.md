@@ -1,6 +1,6 @@
 # snakes-on-a-domain-blog
 
-<https:www.snakesonadomain.com>
+<https://www.snakesonadomain.com>
 
 Short posts about coding adventures in Python
 
