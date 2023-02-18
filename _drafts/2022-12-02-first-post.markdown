@@ -16,7 +16,7 @@ You can also specify the language after the first triple backticks.
 
 ```python
 def hello(name):
-    return f'hello {name}'
+    return f"hello {name}"
 ```
 
 ## Add images

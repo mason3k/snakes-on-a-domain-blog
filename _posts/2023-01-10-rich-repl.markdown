@@ -2,13 +2,13 @@
 title:  "Get Rich (in your repl) Fast"
 date:   2023-01-10
 categories: repl rich tools dev-environment
-header: 
+header:
   teaser: "/assets/rainbow.avif"
 ---
 
 ### Your REPL, Colorized
 
-When I want to do a quick verification on syntax or try a snippet of code, my tool of choice is often my [Python REPL](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode). But visually, the experience can be a little...sad.  
+When I want to do a quick verification on syntax or try a snippet of code, my tool of choice is often my [Python REPL](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode). But visually, the experience can be a little...sad.
 
 <!-- excerpt-end -->
 

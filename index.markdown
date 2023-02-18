@@ -6,7 +6,7 @@ header:
   overlay_color: "#5e616c"
   overlay_image: /assets/unsplash1.jpg
   caption: Photo by <a href="https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sincerely Media</a> on <a href="https://unsplash.com/wallpapers/colors/green?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
   actions:
     - label: "<i class='fas fa-book-reader'></i> All posts"
       url: "/posts/"
@@ -34,7 +34,7 @@ excerpt: >
 #     excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
 #     url: "/docs/license/"
 #     btn_class: "btn--primary"
-#     btn_label: "Learn more"      
+#     btn_label: "Learn more"
 ---
 
 <!-- {% include feature_row %} -->

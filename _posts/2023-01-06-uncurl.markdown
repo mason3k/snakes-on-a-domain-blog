@@ -2,7 +2,7 @@
 title:  "Effortless POST requests with uncurl"
 date:   2023-01-06
 categories: tools til scripting
-header: 
+header:
   teaser: "/assets/html.avif"
 ---
 
@@ -20,12 +20,12 @@ Today I learned about a handy little project called [`uncurl`](https://github.co
 So for instance, giving `uncurl` a curl command customizing the User Agent for a request to [getfedora.org](getfedora.org) will output the corresponding Python request, all ready to be pasted straight into your IDE. Throw a `import requests` at the top of your Python file and you have a fully functioning Python script.
 
 ```shell
-> uncurl 'curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) 
+> uncurl 'curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0)
 Gecko/20100101 Firefox/60.0" https://getfedora.org/'
 >
 > requests.get("https://getfedora.org/",
     headers={
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
         Firefox/60.0"
     },
     cookies={},
