@@ -79,8 +79,9 @@ And in throw the command to install pretty in the file.
 import contextlib
 
 with contextlib.suppress(ImportError):
- from rich import pretty
- pretty.install()
+    from rich import pretty
+
+    pretty.install()
 ```
 
 **What's the contextlib stuff?**

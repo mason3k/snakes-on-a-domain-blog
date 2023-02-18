@@ -57,7 +57,7 @@ And there it is! But it's not just a trivial little GET, but a POST. We actually
 
 Now we have our full curl command, locked and loaded in our clipboard!
 
-```python
+```shell
 curl 'https://www.functionofbeauty.com/order/ajax/update_curl_options.php' \
   -H 'authority: www.functionofbeauty.com' \
   -H 'accept: */*' \
@@ -161,7 +161,6 @@ else:
     print(
         f"Received bad status code {response.status_code}"
     )
-
 ```
 
 Plus, if you're using this functionality to screen scrape, some sites block requests generated through the Requests library, but HTTPX, being less well-known, can sneak through.
