@@ -19,6 +19,7 @@
 - Obsidian calendar parsing
 - namedtuples vs. dataclasses vs. tuples
 - config objects as arguments
+- enums with extra attributes
 
 ## TIL
 
