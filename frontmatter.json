@@ -1,0 +1,61 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "header",
+          "name": "header",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "teaser",
+              "name": "teaser",
+              "type": "image"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.content.publicFolder": "assets",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "_posts",
+      "path": "[[workspace]]/_posts"
+    }
+  ],
+  "frontMatter.taxonomy.tags": [],
+  "frontMatter.taxonomy.categories": [
+    "dev-environment",
+    "extensions",
+    "repl",
+    "rich",
+    "scripting",
+    "til",
+    "tools",
+    "venvs",
+    "vscode"
+  ]
+}
