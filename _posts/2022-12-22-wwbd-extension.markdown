@@ -10,6 +10,9 @@ header:
   teaser: /assets/markus-spiske-code.jpg
 ---
 
+This functionality is now part of the standard Python extension - [check it out](https://code.visualstudio.com/docs/python/environments)!
+{: .notice--warning}
+
 ### The Problem
 
 If you're like me, you know that even for small Python projects and scripts, you should be using a virtual environment. There are a gazillion reasons for this, most of which have been covered effectively elsewhere.
