@@ -7,7 +7,7 @@ categories:
   - extensions
   - dev-environment
 header:
-  teaser: /assets/markus-spiske-code.jpg
+  teaser: /assets/2022-12-22/markus-spiske-code.jpg
 ---
 
 This functionality is now part of the standard Python extension - [check it out](https://code.visualstudio.com/docs/python/environments)!
@@ -21,7 +21,7 @@ If you're like me, you know that even for small Python projects and scripts, you
 
 This post is aimed at those of you who *know* you should be using venvs for your one-off apartment-hunt screenscraper/fantasy football stat aggregator/\*gasp\* real work script but don't because, let's face it, the typical venv workflow is not as simple as it could be (was that `/Scripts/Activate.ps1` or `scripts/activate.ps1`??).
 
-![st-augustine]({{ "/assets/staugustine.jpeg" | relative_url }}){: .align-center}
+![st-augustine]({{ "/assets/2022-12-22/staugustine.jpeg" | relative_url }}){: .align-center}
 *Lord, make me a good venv user, but not yet*
 {: .text-center}
 
@@ -32,7 +32,7 @@ Lately, I've been living up to my venv ideals almost entirely due to a little [e
 Jesus, in this formulation, has been replaced by Python Jesus/Python core developer [Brett Cannon](https://fosstodon.org/@brettcannon
 ), who has spent quite a bit of time thinking about Python packaging, environment strategy, and developer best practices. He's now allowing us live a day (ok, fine, maybe just a second) in the life via this extension, which essentially automates venv creation, activation, and VS Code integration according to his virtual environment philosophy.
 
-![ridealong]({{ "/assets/ridealong.webp" | relative_url }}){: .align-center}
+![ridealong]({{ "/assets/2022-12-22/ridealong.webp" | relative_url }}){: .align-center}
 *Kind of like a Python ride-along*
 {: .text-center}
 

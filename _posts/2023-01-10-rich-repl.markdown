@@ -7,7 +7,7 @@ categories:
   - tools
   - dev-environment
 header:
-  teaser: /assets/rainbow.avif
+  teaser: /assets/2023-01-10/rainbow.avif
 ---
 
 ### Your REPL, Colorized
@@ -18,7 +18,7 @@ When I want to do a quick verification on syntax or try a snippet of code, my to
 
 While some developers take pride in using the least attractive, least GUI-fied interface possible, I actually like tech that reflects we've made it past Pong.
 
-![pong]({{ "/assets/Pong.webp" | relative_url }}){: .align-center}
+![pong]({{ "/assets/2023-01-10/Pong.webp" | relative_url }}){: .align-center}
 
 On the other hand, I love the terminal. The versatility, speed, and kindd of just the fact it's always around makes it the tool of choice for a ton of little admin tasks, including, as I mentioned, playing around in Python.
 
@@ -28,19 +28,19 @@ Enter: Rich! Brought to us by the prolific [Will McGugan](https://www.willmcguga
 
 But for our purposes, we're going to rely on just a handful of lines to go from this:
 
-![before-rich]({{ "/assets/before_rich.jpg" | relative_url }}){: .align-center}
+![before-rich]({{ "/assets/2023-01-10/before_rich.jpg" | relative_url }}){: .align-center}
 {: .text-center}
 
 To this:
 
-![after-rich]({{ "/assets/richafter.jpg" | relative_url }}){: .align-center}
+![after-rich]({{ "/assets/2023-01-10/richafter.jpg" | relative_url }}){: .align-center}
 {: .text-center}
 
 ### The Setup
 
 So now you're feeling like Dorothy pre technicolor-house-manslaughter. So let's get into how to set this up.
 
-![dorothy]({{ "/assets/dorothy.gif" | relative_url }}){: .align-center}
+![dorothy]({{ "/assets/2023-01-10/dorothy.gif" | relative_url }}){: .align-center}
 *I don't think we're in MS-DOS anymore, Toto*
 {: .text-center}
 
@@ -59,13 +59,13 @@ As documented in the [Rich docs](https://rich.readthedocs.io/en/stable/introduct
 
 Trying out some built-in types:
 
-![rich]({{ "/assets/builtins-ex.jpg" | relative_url }}){: .align-center}
+![rich]({{ "/assets/2023-01-10/builtins-ex.jpg" | relative_url }}){: .align-center}
 
 #### Make it Permanent
 
 But we are developers. We are, per our sacred text XKCD, automators to a fault.
 
-![rich]({{ "https://imgs.xkcd.com/comics/automation.png" }}){: .align-center}
+![rich]({{ "<https://imgs.xkcd.com/comics/automation.png>" }}){: .align-center}
 *Sob*
 {: .text-center}
 
@@ -100,7 +100,7 @@ export PYTHONSTARTUP=~/.pythonrc
 
 Restart your shell, enter the Python REPL, and taste the rainbow.
 
-![pythonrc]({{ "/assets/post-boilerplate.jpg" | relative_url }}){: .align-center}
+![pythonrc]({{ "/assets/2023-01-10/post-boilerplate.jpg" | relative_url }}){: .align-center}
 
 ### Bonus
 
@@ -112,6 +112,6 @@ from rich import print
 
 This will cause any normal `print` statements in your code to be rendered with the same beauty that you're now accustomed to in the REPL.
 
-![pythonrc]({{ "/assets/horse-oz.gif" | relative_url }}){: .align-center}
+![pythonrc]({{ "/assets/2023-01-10/horse-oz.gif" | relative_url }}){: .align-center}
 
 And you're off! Happy coloring.

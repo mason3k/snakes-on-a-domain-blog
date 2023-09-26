@@ -6,7 +6,7 @@ categories:
   - til
   - scripting
 header:
-  teaser: /assets/html.avif
+  teaser: /assets/2023-01-06/html.avif
 ---
 
 ### Uncurl
@@ -16,7 +16,7 @@ Today I learned about a handy little project called [`uncurl`](https://github.co
 
  No, this is not a tool to take the [coolest sport](https://olympics.com/en/video/edin-makes-a-curling-spin-o-rama-in-sweden-s-last-shot) out of the Olympics or de-Hermione Anne Hathaway. It takes the text of a curl command and converts it to Python code using the [Requests library](https://requests.readthedocs.io/en/latest/).
 
-![anne-hathaway]({{ "/assets/anne_hatheway_pre.png" | relative_url }}){: .align-center}
+![anne-hathaway]({{ "/assets/2023-01-06/anne_hatheway_pre.png" | relative_url }}){: .align-center}
 *Julie Andrews hates volume??*
 {: .text-center}
 
@@ -44,19 +44,19 @@ So this is a nice little tool. But pair it with the option in your browser's Dev
 
 In solidarity with the curly-haired women maligned by the 2000s glow-up montage ✊, we'll head over to `functionofbeauty.com`'s hair profile builder and prepare to lock in some moisture.
 
-![joke_husky]({{ "/assets/joke_husky_small.jpeg" | relative_url }}){: .align-center }
+![joke_husky]({{ "/assets/2023-01-06/joke_husky_small.jpeg" | relative_url }}){: .align-center }
 *If this post is a mini-class, would that make it METHODofbeauty.com?*
 {: .text-center}
 
 Let's say the information we want to parse only appears when we select curl type "3B" and click "Submit".
-![curl-type-submit.jpg]({{ "/assets/curl_type_submit.jpg" | relative_url }}){: .align-center}
+![curl-type-submit.jpg]({{ "/assets/2023-01-06/curl_type_submit.jpg" | relative_url }}){: .align-center}
 
 We'll open up DevTools and navigate to the Network tab to see what request is made so we can replicate it in our Python code.
-![curl-type.jpg]({{ "/assets/curl_type.jpg" | relative_url }}){: .align-center}
+![curl-type.jpg]({{ "/assets/2023-01-06/curl_type.jpg" | relative_url }}){: .align-center}
 
 And there it is! But it's not just a trivial little GET, but a POST. We actually have to send some form-encoded data, and we'll get the full HTML we need back, ready for parsing. We could write our request manually in Python, but why bother? We have conditioning to get back to. All we need to do is use this handy little option to copy the request we triggered as curl:
 
-![curl-type.jpg]({{ "/assets/copy_as_curl.jpg" | relative_url }}){: .align-center}
+![curl-type.jpg]({{ "/assets/2023-01-06/copy_as_curl.jpg" | relative_url }}){: .align-center}
 
 Now we have our full curl command, locked and loaded in our clipboard!
 
@@ -83,7 +83,7 @@ curl 'https://www.functionofbeauty.com/order/ajax/update_curl_options.php' \
 
 We'll head over to the terminal, feed this whole command (in quotes) to `uncurl`, and watch the uncurl magic happen:
 
-![uncurl_terminal]({{ "/assets/uncurl_terminal.jpg" | relative_url }}){: .align-center}
+![uncurl_terminal]({{ "/assets/2023-01-06/uncurl_terminal.jpg" | relative_url }}){: .align-center}
 
 Copy and paste this output to a file, drop an `import requests` at the the top, pip install `requests` into your venv (you are using a [per-project venv]({{ site.baseurl }}{% post_url 2022-12-22-wwbd-extension %}) aren't you 👀), and you have a functioning little Python script!
 
@@ -170,4 +170,4 @@ Plus, if you're using this functionality to screen scrape, some sites block requ
 
 I'd say that's pretty fabulous.
 
-![anne_smiley]({{ "/assets/anne_smiley.jpeg" | relative_url }}){: .align-center}
+![anne_smiley]({{ "/assets/2023-01-06/anne_smiley.jpeg" | relative_url }}){: .align-center}
