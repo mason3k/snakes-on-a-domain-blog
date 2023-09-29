@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 vendor
 .DS_Store
+.frontmatter/database/taxonomyDb.json
+.gitignore
+frontmatter.json
